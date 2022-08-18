@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_154700) do
     t.string "hotel_name", null: false
     t.float "price", null: false
     t.string "currency", null: false
-    t.datetime "entry_date", null: false
-    t.datetime "departure_date", null: false
+    t.date "entry_date", null: false
+    t.date "departure_date", null: false
     t.string "customer_name", null: false
     t.string "customer_email", null: false
     t.datetime "created_at", null: false

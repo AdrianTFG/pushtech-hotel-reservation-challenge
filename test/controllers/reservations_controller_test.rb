@@ -29,11 +29,31 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
             hotel_name: 'Test Hotel Name',
             price: 100.50,
             currency: 'EUR',
+            entry_date: '2022-08-18',
+            departure_date: '2022-08-18',
             customer_name: 'Test Customer Name',
             customer_email: 'Test@Customer.email'
         }
     }
 
     assert_redirected_to reservations_path
+    assert_equal flash[:notice], 'Reservation saved correctly'
   end
+
+  test 'does not allow to create a new reservation with empty fields' do
+    post reservations_path, params: {
+        reservation: {
+            hotel_name: '',
+            price: 100.50,
+            currency: 'EUR',
+            entry_date: '2022-08-18',
+            departure_date: '2022-08-18',
+            customer_name: 'Test Customer Name',
+            customer_email: 'Test@Customer.email'
+        }
+    }
+    assert_response :unprocessable_entity
+  end
+
+
 end

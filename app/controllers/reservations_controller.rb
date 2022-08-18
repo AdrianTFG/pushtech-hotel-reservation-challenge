@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(product_params)
 
     if @reservation.save
-      redirect_to reservations_path
+      redirect_to reservations_path, notice: 'Reservation saved correctly'
     else
       render :new, status: :unprocessable_entity
     end

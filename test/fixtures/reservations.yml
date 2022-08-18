@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hotel_name: MyString
+  price: 1.5
+  currency: MyString
+  entry_date: 2022-08-18
+  departure_date: 2022-08-18
+  customer_name: MyString
+  customer_email: MyString
+
+two:
+  hotel_name: MyString
+  price: 1.5
+  currency: MyString
+  entry_date: 2022-08-18
+  departure_date: 2022-08-18
+  customer_name: MyString
+  customer_email: MyString

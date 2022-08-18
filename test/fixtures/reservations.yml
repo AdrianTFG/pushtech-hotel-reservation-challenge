@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  hotel_name: MyString
-  price: 1.5
-  currency: MyString
+reservation_one:
+  hotel_name: HOTech
+  price: 150
+  currency: EUR
   entry_date: 2022-08-18
   departure_date: 2022-08-18
-  customer_name: MyString
-  customer_email: MyString
+  customer_name: Adrian
+  customer_email: adrian@adrian.com
 
-two:
-  hotel_name: MyString
-  price: 1.5
-  currency: MyString
+reservation_two:
+  hotel_name: HOTech
+  price: 100.5
+  currency: EUR
   entry_date: 2022-08-18
   departure_date: 2022-08-18
-  customer_name: MyString
-  customer_email: MyString
+  customer_name: Ben
+  customer_email: benjamin@benjamin.com

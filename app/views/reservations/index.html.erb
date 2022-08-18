@@ -1,3 +1,8 @@
-<h1>Reservations:</h1>
+<h1>Reservations Algo:</h1>
 
-<% Date.today %>
+
+<% @reservations.each do |reservation| %>
+    <%= link_to reservation_path(reservation.id), class: 'reservation' do %>
+        <h2><%= reservation.hotel_name %> </h2>
+    <% end %>
+<% end %>

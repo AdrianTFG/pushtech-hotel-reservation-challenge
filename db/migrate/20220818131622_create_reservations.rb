@@ -4,8 +4,8 @@ class CreateReservations < ActiveRecord::Migration[7.0]
       t.string :hotel_name
       t.float :price
       t.string :currency
-      t.date :entry_date
-      t.date :departure_date
+      t.datetime :entry_date
+      t.datetime :departure_date
       t.string :customer_name
       t.string :customer_email
 

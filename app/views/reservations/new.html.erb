@@ -1,0 +1,44 @@
+<h2>Add reservation</h2>
+
+<%= form_with model: @reservation do |form| %>
+    <% @reservation.errors.full_messages.each do |error| %>
+        <div>
+          <%= error %>
+        </div>
+    <% end %>
+    <div>
+      <%= form.label :hotel_name %>
+      <%= form.text_field :hotel_name %>
+    </div>
+
+    <div>
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </div>
+
+    <div>
+      <%= form.label :currency %>
+      <%= form.text_field :currency %>
+    </div>
+
+    <div>
+      <%= form.label :entry_date %>
+      <%= form.date :entry_date %>
+    </div>
+
+    <div>
+      <%= form.label :departure_date %>
+      <%= form.date :departure_date %>
+    </div>
+
+    <div>
+      <%= form.label :customer_name %>
+      <%= form.text_field :customer_name %>
+    </div>
+
+    <div>
+      <%= form.label :customer_email %>
+      <%= form.text_field :customer_email %>
+    </div>
+    <%= form.submit %>
+<% end %>

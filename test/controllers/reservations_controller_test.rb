@@ -88,6 +88,14 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
+  test 'can delete reservations' do
+    assert_difference('Reservation.count', -1) do
+      delete reservation_path(reservations(:reservation_one))
+    end
 
+    assert_redirected_to reservations_path
+    assert_equal flash[:notice], 'Reservation deleted correctly'
+
+  end
 
 end

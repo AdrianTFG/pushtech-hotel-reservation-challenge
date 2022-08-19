@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(product_params)
+    @reservation = Reservation.new(reservation_params )
 
     if @reservation.save
       redirect_to reservations_path, notice: 'Reservation saved correctly'
@@ -29,16 +29,23 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
 
-    if @reservation.update(product_params)
+    if @reservation.update(reservation_params )
       redirect_to reservations_path, notice: 'Reservation updated correctly'
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+
+    redirect_to reservations_path, notice: 'Reservation deleted correctly', status: :see_other
+  end
+
   private
 
-  def product_params
+  def reservation_params 
     params.require(:reservation).permit(:hotel_name, :price, :currency, :entry_date, :departure_date, :customer_name, :customer_email)
   end
 end

@@ -8,3 +8,7 @@
 <p class="customer_email"><%= @reservation.customer_email %></p>
 
 <%= link_to 'Edit reservation', edit_reservation_path(@reservation) %>
+<%= link_to 'Delete reservation', reservation_path(@reservation), data:{
+    turbo_method: :delete,
+    turbo_confirm: 'Are you sure?'
+} %>

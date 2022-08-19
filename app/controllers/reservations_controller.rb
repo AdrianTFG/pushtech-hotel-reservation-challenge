@@ -22,6 +22,20 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+
+    if @reservation.update(product_params)
+      redirect_to reservations_path, notice: 'Reservation updated correctly'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def product_params

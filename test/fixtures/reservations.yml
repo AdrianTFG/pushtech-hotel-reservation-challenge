@@ -2,7 +2,7 @@
 
 reservation_one:
   hotel_name: HOTech
-  price: 150
+  price: 150.0
   currency: EUR
   entry_date: 2022-08-18
   departure_date: 2022-08-18

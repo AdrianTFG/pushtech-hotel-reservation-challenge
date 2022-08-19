@@ -1,2 +1,10 @@
-<h1 class="customer_name"><%= @reservation.customer_name %></h1>
+<h2>Reservation details</h2>
+<p class="hotel_name"><%= @reservation.hotel_name %></p>
+<p class="price"><%= @reservation.price %></p>
+<p class="currency"><%= @reservation.currency %></p>
+<p class="entry_date"><%= @reservation.entry_date %></p>
+<p class="departure_date"><%= @reservation.departure_date %></p>
+<p class="customer_name"><%= @reservation.customer_name %></p>
 <p class="customer_email"><%= @reservation.customer_email %></p>
+
+<%= link_to 'Edit reservation', edit_reservation_path(@reservation) %>

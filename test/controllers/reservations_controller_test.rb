@@ -14,6 +14,11 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select '.customer_name', 'Adrian'
     assert_select '.customer_email', 'adrian@adrian.com'
+    assert_select '.hotel_name', 'HOTech'
+    assert_select '.price', '150.0'
+    assert_select '.currency', 'EUR'
+    assert_select '.entry_date', '2022-08-18'
+    assert_select '.departure_date', '2022-08-18'
   end
 
   test 'render a new reservation form' do
@@ -54,6 +59,35 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     }
     assert_response :unprocessable_entity
   end
+
+  test 'render an edit reservation form' do
+    get edit_reservation_path(reservations(:reservation_one))
+
+    assert_response :success
+    assert_select 'form'
+  end
+
+  test 'allow to update a reservation' do
+    patch reservation_path(reservations(:reservation_one)), params: {
+        reservation: {
+            price: 150
+        }
+    }
+
+    assert_redirected_to reservations_path
+    assert_equal flash[:notice], 'Reservation updated correctly'
+  end
+
+  test 'does not allow to update a reservation' do
+    patch reservation_path(reservations(:reservation_one)), params: {
+        reservation: {
+            price: nil
+        }
+    }
+
+    assert_response :unprocessable_entity
+  end
+
 
 
 end

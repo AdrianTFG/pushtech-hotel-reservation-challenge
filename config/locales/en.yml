@@ -4,7 +4,7 @@ en:
       reservation: 'Reservation'
     attributes:
       reservation:
-        hotel_name: 'Hotel name'
+        room_id: 'Habitación'
         price: 'Price'
         currency: 'Currency'
         entry_date: 'Entry date'
@@ -47,3 +47,26 @@ en:
       title: 'Reservation details'
     update:
       updated: 'Reservation updated correctly'
+
+  rooms:
+    create:
+      created: 'Room created correctly'
+    destroy:
+      destroyed: 'Room deleted correctly'
+    edit:
+      title: 'Edit room'
+    index:
+      back: 'Back to rooms'
+      title: 'Rooms:'
+    msgs:
+      confirm: 'Are you sure you want to delete this room?'
+    new:
+      title: 'Add room'
+    update:
+      updated: 'Room updated correctly'
+
+
+  shared:
+    header:
+      add: Add Reservation
+      rooms: Rooms

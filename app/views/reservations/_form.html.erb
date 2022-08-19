@@ -5,18 +5,8 @@
         </div>
     <% end %>
     <div>
-      <%= form.label :hotel_name %>
-      <%= form.text_field :hotel_name %>
-    </div>
-
-    <div>
-      <%= form.label :price %>
-      <%= form.text_field :price %>
-    </div>
-
-    <div>
-      <%= form.label :currency %>
-      <%= form.text_field :currency %>
+      <%= form.label :room_id %>
+      <%= form.collection_select :room_id, Room.all.order(room_name: :asc), :id, :room_name %>
     </div>
 
     <div>

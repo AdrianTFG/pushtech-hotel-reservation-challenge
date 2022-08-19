@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.all.order(entry_date: :asc)
   end
 
   def show
@@ -43,7 +43,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:hotel_name, :price, :currency, :entry_date, :departure_date, :customer_name, :customer_email)
+    params.require(:reservation).permit(:room_id, :entry_date, :departure_date, :customer_name, :customer_email)
   end
 
   def reservation

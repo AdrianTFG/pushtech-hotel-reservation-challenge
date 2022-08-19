@@ -1,0 +1,9 @@
+<div id="<%= dom_id room %>">
+  <%= room.room_name %>
+  <%= link_to t('.edit'), edit_room_path(room) %>
+  <%= link_to t('.delete'), reservation_path(room), data:{
+      turbo_method: :delete,
+      turbo_confirm: t('rooms.msgs.confirm')
+  } %>
+
+</div>

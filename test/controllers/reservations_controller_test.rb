@@ -14,7 +14,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select '.customer_name', 'Adrian'
     assert_select '.customer_email', 'adrian@adrian.com'
-    assert_select '.hotel_name', 'HOTech'
+    assert_select '.room_name', 'Room 1'
     assert_select '.price', '150.0'
     assert_select '.currency', 'EUR'
     assert_select '.entry_date', '2022-08-18'
@@ -31,9 +31,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   test 'allow to create a new reservation' do
     post reservations_path, params: {
         reservation: {
-            hotel_name: 'Test Hotel Name',
-            price: 100.50,
-            currency: 'EUR',
+            room_id: rooms(:room_1).id,
             entry_date: '2022-08-18',
             departure_date: '2022-08-18',
             customer_name: 'Test Customer Name',
@@ -48,9 +46,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   test 'does not allow to create a new reservation with empty fields' do
     post reservations_path, params: {
         reservation: {
-            hotel_name: '',
-            price: 100.50,
-            currency: 'EUR',
+            room_id: nil,
             entry_date: '2022-08-18',
             departure_date: '2022-08-18',
             customer_name: 'Test Customer Name',
@@ -70,7 +66,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   test 'allow to update a reservation' do
     patch reservation_path(reservations(:reservation_one)), params: {
         reservation: {
-            price: 150
+            customer_name: 'Adrian'
         }
     }
 
@@ -81,7 +77,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   test 'does not allow to update a reservation' do
     patch reservation_path(reservations(:reservation_one)), params: {
         reservation: {
-            price: nil
+            customer_name: nil
         }
     }
 

@@ -1,3 +1,5 @@
 <%= link_to reservation_path(reservation.id), class: 'reservation' do %>
-    <h2><%= reservation.hotel_name %> </h2>
+    <h2><%= reservation.room.room_name %> </h2>
+    <h3><%= reservation.entry_date.to_date %></h3>
+    <h3><%= reservation.departure_date.to_date %></h3>
 <% end %>

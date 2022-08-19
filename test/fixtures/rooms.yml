@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+room_1:
+  room_name: Room 1
+  description: Description room 1
+  price: 150
+  currency: EUR
+
+room_2:
+  room_name: Room 2
+  description: Description room 2
+  price: 250
+  currency: EUR
+
+room_3:
+  room_name: Room 3
+  description: Description room 3
+  price: 100
+  currency: EUR

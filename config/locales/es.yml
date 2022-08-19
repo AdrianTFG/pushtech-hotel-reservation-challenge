@@ -4,7 +4,7 @@ es:
       reservation: 'Reserva'
     attributes:
       reservation:
-        hotel_name: 'Nombre del Hotel'
+        room_id: 'Habitación'
         price: 'Precio'
         currency: 'Divisa'
         entry_date: 'Fecha de Entrada'
@@ -240,3 +240,25 @@ es:
       title: 'Detalles de la reserva'
     update:
       updated: 'Reserva editada correctamente'
+
+  rooms:
+    create:
+      created: 'Habitación creada correctamente'
+    destroy:
+      destroyed: 'Habitación eliminada correctamente'
+    edit:
+      title: 'Editar habitación'
+    index:
+      back: 'Volver al listado de habitaciones'
+      title: 'Habitación:'
+    msgs:
+      confirm: '¿Estas seguro de eliminar la habitación?'
+    new:
+      title: 'Añadir habitación'
+    update:
+      updated: 'Habitación editada correctamente'
+
+  shared:
+    header:
+      add: Añadir reserva
+      rooms: Habitaciones

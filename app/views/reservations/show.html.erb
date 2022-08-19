@@ -1,15 +1,15 @@
 <h2><%= t('.title') %></h2>
 
-<p class="hotel_name"><%= @reservation.hotel_name %></p>
-<p class="price"><%= @reservation.price %></p>
-<p class="currency"><%= @reservation.currency %></p>
-<p class="entry_date"><%= @reservation.entry_date %></p>
-<p class="departure_date"><%= @reservation.departure_date %></p>
+<p class="room_name"><%= @reservation.room.room_name %></p>
+<p class="price"><%= @reservation.room.price %></p>
+<p class="currency"><%= @reservation.room.currency %></p>
+<p class="entry_date"><%= @reservation.entry_date.to_date %></p>
+<p class="departure_date"><%= @reservation.departure_date.to_date %></p>
 <p class="customer_name"><%= @reservation.customer_name %></p>
 <p class="customer_email"><%= @reservation.customer_email %></p>
 
-<%= link_to 'Edit reservation', edit_reservation_path(@reservation) %>
-<%= link_to 'Delete reservation', reservation_path(@reservation), data:{
+<%= link_to t('.edit'), edit_reservation_path(@reservation) %>
+<%= link_to t('.delete'), reservation_path(@reservation), data:{
     turbo_method: :delete,
     turbo_confirm: t('reservations.msgs.confirm')
 } %>

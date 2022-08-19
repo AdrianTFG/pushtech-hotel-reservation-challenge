@@ -1,33 +1,49 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      reservation: 'Reservation'
+    attributes:
+      reservation:
+        hotel_name: 'Hotel name'
+        price: 'Price'
+        currency: 'Currency'
+        entry_date: 'Entry date'
+        departure_date: 'Departure date'
+        customer_name: 'Customer name'
+        customer_email: 'Customer email'
+    errors:
+      models:
+        attributes:
+          hotel_name:
+            blank: "Hotel Name field, can't be blank"
+          price:
+            blank: "Price field, can't be blank"
+          currency:
+            blank: "Currency field, can't be blank"
+          entry_date:
+            blank: "Entry date field, can't be blank"
+          departure_date:
+            blank: "Departure date field, can't be blank"
+          customer_name:
+            blank: "Customer name field, can't be blank"
+          customer_email:
+            blank: "Customer email field, can't be blank"
+            invalid: "Format of Customer email field is invalid"
+
+  reservations:
+    create:
+      created: 'Reservation created correctly'
+    destroy:
+      destroyed: 'Reservation deleted correctly'
+    edit:
+      title: 'Edit reservation'
+    index:
+      title: 'Reservations:'
+    msgs:
+      confirm: 'Are you sure you want to delete the reservation?'
+    new:
+      title: 'Add reservation'
+    show:
+      title: 'Reservation details'
+    update:
+      updated: 'Reservation updated correctly'

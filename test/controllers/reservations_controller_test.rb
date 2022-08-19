@@ -42,7 +42,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     }
 
     assert_redirected_to reservations_path
-    assert_equal flash[:notice], 'Reservation saved correctly'
+    assert_equal flash[:notice], 'Reservation created correctly'
   end
 
   test 'does not allow to create a new reservation with empty fields' do

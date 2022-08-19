@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    reservation
   end
 
   def new
@@ -16,36 +16,37 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params )
 
     if @reservation.save
-      redirect_to reservations_path, notice: 'Reservation saved correctly'
+      redirect_to reservations_path, notice: t('.created')
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @reservation = Reservation.find(params[:id])
+    reservation
   end
 
   def update
-    @reservation = Reservation.find(params[:id])
-
-    if @reservation.update(reservation_params )
-      redirect_to reservations_path, notice: 'Reservation updated correctly'
+    if reservation.update(reservation_params )
+      redirect_to reservations_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @reservation = Reservation.find(params[:id])
-    @reservation.destroy
+    reservation.destroy
 
-    redirect_to reservations_path, notice: 'Reservation deleted correctly', status: :see_other
+    redirect_to reservations_path, notice: t('.destroyed'), status: :see_other
   end
 
   private
 
-  def reservation_params 
+  def reservation_params
     params.require(:reservation).permit(:hotel_name, :price, :currency, :entry_date, :departure_date, :customer_name, :customer_email)
+  end
+
+  def reservation
+    @reservation = Reservation.find(params[:id])
   end
 end

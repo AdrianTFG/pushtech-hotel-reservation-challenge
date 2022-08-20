@@ -94,4 +94,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
 
   end
 
+
+
+
 end

@@ -236,6 +236,8 @@ es:
       confirm: '¿Estas seguro de eliminar la reserva?'
     new:
       title: 'Añadir reserva'
+    search_form:
+      search: 'Buscar'
     show:
       title: 'Detalles de la reserva'
     update:

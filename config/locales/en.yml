@@ -43,11 +43,12 @@ en:
       confirm: 'Are you sure you want to delete the reservation?'
     new:
       title: 'Add reservation'
+    search_form:
+      search: 'Search'
     show:
       title: 'Reservation details'
     update:
       updated: 'Reservation updated correctly'
-
   rooms:
     create:
       created: 'Room created correctly'

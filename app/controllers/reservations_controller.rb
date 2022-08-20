@@ -1,7 +1,9 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all.order(entry_date: :asc)
+    @rooms = Room.all
+    @q = Reservation.ransack(params[:q])
+    @reservations = @q.result(distinct: true)
   end
 
   def show

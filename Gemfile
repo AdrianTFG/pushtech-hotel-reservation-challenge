@@ -74,3 +74,5 @@ group :test do
   gem "webdrivers"
   gem 'ffi'
 end
+
+gem "pagy", "~> 5.10"

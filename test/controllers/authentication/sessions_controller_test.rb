@@ -22,4 +22,13 @@ class Authentication::SessionsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to reservations_url
   end
+
+  test "should logout" do
+    login
+
+    delete session_url(@user.id)
+
+    assert_redirected_to new_session_url
+    assert_equal flash[:notice], 'Session ended. See you soon!'
+  end
 end

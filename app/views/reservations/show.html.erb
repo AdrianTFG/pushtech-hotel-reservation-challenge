@@ -8,8 +8,8 @@
 <p class="customer_name"><%= @reservation.customer_name %></p>
 <p class="customer_email"><%= @reservation.customer_email %></p>
 
-<%= link_to t('.edit'), edit_reservation_path(@reservation) %>
+<%= link_to t('.edit'), edit_reservation_path(@reservation) if @reservation.owner? || @reservation.admin? %>
 <%= link_to t('.delete'), reservation_path(@reservation), data:{
     turbo_method: :delete,
     turbo_confirm: t('reservations.msgs.confirm')
-} %>
+}  if @reservation.owner? || @reservation.admin? %>

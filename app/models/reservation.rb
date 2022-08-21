@@ -4,4 +4,12 @@ class Reservation < ApplicationRecord
 
   belongs_to :room
   belongs_to :user, default: -> { Current.user }
+
+  def owner?
+    user_id == Current.user.id
+  end
+
+  def admin?
+    Current.user.admin?
+  end
 end

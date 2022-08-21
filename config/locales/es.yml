@@ -64,6 +64,7 @@ es:
         updated: 'Usuario editada correctamente'
 
   common:
+    not_authorized: 'No tienes permisos para esta acción'
     not_logged_in: 'Tienes que hacer login o registrarte'
 
   reservations:

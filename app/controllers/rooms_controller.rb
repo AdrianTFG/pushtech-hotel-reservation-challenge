@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
 
+  before_action :authorize!
+
   def index
     @rooms = Room.all.order(room_name: :asc)
   end

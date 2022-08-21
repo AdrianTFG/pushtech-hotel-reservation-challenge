@@ -25,10 +25,12 @@ class ReservationsController < ApplicationController
   end
 
   def edit
-    reservation
+    authorize! reservation
   end
 
   def update
+    authorize! reservation
+
     if reservation.update(reservation_params )
       redirect_to reservations_path, notice: t('.updated')
     else
@@ -37,6 +39,8 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    authorize! reservation
+
     reservation.destroy
 
     redirect_to reservations_path, notice: t('.destroyed'), status: :see_other
@@ -49,6 +53,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation
-    @reservation = Reservation.find(params[:id])
+    @reservation ||= Reservation.find(params[:id])
   end
 end

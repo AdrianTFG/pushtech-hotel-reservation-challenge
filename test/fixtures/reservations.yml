@@ -6,6 +6,7 @@ reservation_one:
   customer_name: Adrian
   customer_email: adrian@adrian.com
   room: room_1
+  user: adrian
 
 reservation_two:
   entry_date: 2022-08-18
@@ -13,3 +14,4 @@ reservation_two:
   customer_name: Ben
   customer_email: benjamin@benjamin.com
   room: room_2
+  user: adrian

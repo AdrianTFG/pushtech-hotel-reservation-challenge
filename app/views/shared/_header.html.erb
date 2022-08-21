@@ -2,6 +2,11 @@
     <h1> HOTech Risort </h1>
 <% end %>
 
-<%= Current.user.inspect %>
-<%= link_to t('.add'), new_reservation_path %>
-<%= link_to t('.rooms'), rooms_path %>
+<%= link_to t('.add'), new_reservation_path if Current.user%>
+<%= link_to t('.rooms'), rooms_path if Current.user %>
+<%= link_to t('.login'), new_session_path unless Current.user %>
+<%= link_to t('.register'), new_user_path if Current.user %>
+<%= link_to t('.logout'), session_path(Current.user.id), data: {
+    turbo_method: :delete,
+    turbo_confirm: t('authentication.sessions.msgs.confirm')
+} if Current.user %>

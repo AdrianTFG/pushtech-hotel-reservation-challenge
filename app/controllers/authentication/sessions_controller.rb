@@ -16,4 +16,10 @@ class Authentication::SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session.delete(:user_id)
+
+    redirect_to new_session_path, notice: t('.destroyed'), status: :see_other
+  end
+
 end

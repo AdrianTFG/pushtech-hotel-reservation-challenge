@@ -1,15 +1,21 @@
-<%= form_with(url: sessions_path) do |form| %>
-    <div>
-      <%= form.label :login %>
-      <%= form.text_field :login, required: true %>
-    </div>
 
-    <div>
-      <%= form.label :password %>
-      <%= form.password_field :password, required: true %>
-    </div>
 
-    <div>
-      <%= form.submit %>
-    </div>
-<% end %>
+<div class="row">
+  <div class="col-lg-4">
+    <%= form_with(url: sessions_path) do |form| %>
+        <div>
+          <%= form.label :login, class: 'form-label' %>
+          <%= form.text_field :login, class: 'form-control', required: true %>
+        </div>
+
+        <div>
+          <%= form.label :password, class: 'form-label' %>
+          <%= form.password_field :password, class: 'form-control', required: true %>
+        </div>
+
+        <div>
+          <%= form.submit t('.submit_button'), class: 'btn btn-success mt-3' %>
+        </div>
+    <% end %>
+  </div>
+</div>

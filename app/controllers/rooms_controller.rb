@@ -20,7 +20,7 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to rooms_url, notice: t('.created')
     else
-      ender :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 

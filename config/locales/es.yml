@@ -23,7 +23,7 @@ es:
         login: 'Email o nombre de usuario'
         password: 'Contraseña'
       user:
-        email: 'Emali'
+        email: 'Email'
         username: 'Nombre de usuario'
         password: 'Contraseña'
 
@@ -43,6 +43,7 @@ es:
         confirm: '¿Estas seguro de cerrar sesión?'
       new:
         title: 'Añadir Usuario'
+        submit_button: 'Iniciar Sesión'
       update:
         updated: 'Usuario editada correctamente'
 
@@ -60,6 +61,7 @@ es:
         confirm: '¿Estas seguro de eliminar la Usuario?'
       new:
         title: 'Añadir Usuario'
+        submit_button: 'Crear Usuario'
       update:
         updated: 'Usuario editada correctamente'
 
@@ -111,3 +113,4 @@ es:
       login: Login
       register: Añadir Usuario
       logout: Cerrar sesión
+      reservations: Listado de reservas

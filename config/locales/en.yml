@@ -23,7 +23,7 @@ en:
         login: 'Email or username'
         password: 'Password'
       user:
-        email: 'Emali'
+        email: 'Email'
         username: 'Username'
         password: 'Password'
 
@@ -43,6 +43,7 @@ en:
         confirm: 'Are you sure you want to logout?'
       new:
         title: 'Add User'
+        submit_button: 'Login'
       update:
         updated: 'User updated correctly'
 
@@ -60,6 +61,7 @@ en:
         confirm: 'Are you sure you want to delete this User?'
       new:
         title: 'Add User'
+        submit_button: 'Create User'
       update:
         updated: 'User updated correctly'
 
@@ -111,3 +113,4 @@ en:
       login: Login
       register: Add User
       logout: Logout
+      reservations: Reservation list

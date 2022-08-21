@@ -1,4 +1,21 @@
+<%= render partial: 'search_form' %>
+
 <h2><%= t('.title') %></h2>
 
-<%= render partial: 'search_form' %>
-<%= render partial: 'reservation', collection: @reservations %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col"><%= t('.column.room_name') %></th>
+      <th scope="col"><%= t('.column.entry_date') %></th>
+      <th scope="col"><%= t('.column.departure_date') %></th>
+      <th scope="col"><%= t('.column.customer_name') %></th>
+      <th scope="col"><%= t('.column.price') %></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'reservation', collection: @reservations %>
+    </tbody>
+  </table>
+</div>

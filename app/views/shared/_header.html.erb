@@ -1,12 +1,37 @@
-<%= link_to reservations_path do %>
-    <h1> HOTech Risort </h1>
-<% end %>
 
-<%= link_to t('.add'), new_reservation_path if Current.user%>
-<%= link_to t('.rooms'), rooms_path if Current.user&.admin? %>
-<%= link_to t('.login'), new_session_path unless Current.user %>
-<%= link_to t('.register'), new_user_path if Current.user&.admin?  %>
-<%= link_to t('.logout'), session_path(Current.user.id), data: {
-    turbo_method: :delete,
-    turbo_confirm: t('authentication.sessions.msgs.confirm')
-} if Current.user %>
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <%= link_to reservations_path, class: 'navbar-brand' do %>
+        <h1> HOTech Risort </h1>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to t('.reservations'), reservations_path, class: 'nav-link' if Current.user %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.add'), new_reservation_path, class: 'nav-link' if Current.user%>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.rooms'), rooms_path, class: 'nav-link' if Current.user&.admin? %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.login'), new_session_path, class: 'nav-link'  unless Current.user %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.register'), new_user_path, class: 'nav-link' if Current.user&.admin?  %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.logout'), session_path(Current.user.id), class: 'nav-link', data: {
+              turbo_method: :delete,
+              turbo_confirm: t('authentication.sessions.msgs.confirm')
+          } if Current.user %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

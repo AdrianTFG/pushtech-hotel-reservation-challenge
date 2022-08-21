@@ -1,5 +1,9 @@
-<%= link_to reservation_path(reservation.id), class: 'reservation' do %>
-    <h2><%= reservation.room.room_name %> </h2>
-    <h3><%= reservation.entry_date.to_date %></h3>
-    <h3><%= reservation.departure_date.to_date %></h3>
-<% end %>
+<tr>
+  <td><%= reservation.room.room_name %></td>
+  <td><%= reservation.entry_date.to_date %></td>
+  <td><%= reservation.departure_date.to_date %></td>
+  <td><%= reservation.customer_name %></td>
+  <td><%= Room.format_number(reservation.room.price.to_f * (reservation.departure_date.to_date.mjd - reservation.entry_date.to_date.mjd), reservation.room.currency) %></td>
+  <td><%= link_to t('.show'), reservation_path(reservation.id), class: 'reservation' %></td>
+</tr>
+

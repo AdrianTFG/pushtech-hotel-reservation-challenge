@@ -1,5 +1,20 @@
-<h2><%= t('.title') %></h2>
+<%= link_to t('.new'), new_room_path, class: 'btn btn-primary' %>
 
-<%= render partial: 'room', collection: @rooms %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col"><%= t('.column.room_name') %></th>
+      <th scope="col"><%= t('.column.description') %></th>
+      <th scope="col"><%= t('.column.price_per_day') %></th>
+      <th scope="col"><%= t('.column.currency') %></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render partial: 'room', collection: @rooms %>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to t('.new'), new_room_path %>

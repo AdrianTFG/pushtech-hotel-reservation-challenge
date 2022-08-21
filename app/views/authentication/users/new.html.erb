@@ -1,26 +1,31 @@
-<%= form_with(model: @user) do |form| %>
-    <% @user.errors.full_messages.each do |error| %>
+<div class="row">
+  <div class="col-lg-4">
+    <%= form_with(model: @user) do |form| %>
+        <% @user.errors.full_messages.each do |error| %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%= error %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% end %>
+
+        <div class="mb-3">
+          <%= form.label :email, class: 'form-label' %>
+          <%= form.email_field :email, class: 'form-control', required: true %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :username, class: 'form-label' %>
+          <%= form.text_field :username, class: 'form-control', required: true %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :password, class: 'form-label' %>
+          <%= form.password_field :password, class: 'form-control', required: true %>
+        </div>
+
         <div>
-          <%= error %>
+          <%= form.submit t('.submit_button'), class: 'btn btn-success mt-3' %>
         </div>
     <% end %>
-
-    <div>
-      <%= form.label :email %>
-      <%= form.email_field :email, required: true %>
-    </div>
-
-    <div>
-      <%= form.label :username %>
-      <%= form.text_field :username, required: true %>
-    </div>
-
-    <div>
-      <%= form.label :password %>
-      <%= form.password_field :password, required: true %>
-    </div>
-
-    <div>
-      <%= form.submit %>
-    </div>
-<% end %>
+  </div>
+</div>

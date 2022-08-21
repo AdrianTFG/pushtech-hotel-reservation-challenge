@@ -30,6 +30,24 @@ en:
             blank: "Customer email field, can't be blank"
             invalid: "Format of Customer email field is invalid"
 
+  authentication:
+    users:
+      create:
+        created: 'User created correctly'
+      destroy:
+        destroyed: 'User deleted correctly'
+      edit:
+        title: 'Edit User'
+      index:
+        back: 'Back to Users'
+        title: 'User:'
+      msgs:
+        confirm: 'Are you sure you want to delete this User?'
+      new:
+        title: 'Add User'
+      update:
+        updated: 'User updated correctly'
+
   reservations:
     create:
       created: 'Reservation created correctly'
@@ -49,6 +67,7 @@ en:
       title: 'Reservation details'
     update:
       updated: 'Reservation updated correctly'
+
   rooms:
     create:
       created: 'Room created correctly'

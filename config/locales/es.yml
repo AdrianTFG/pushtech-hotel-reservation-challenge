@@ -223,6 +223,24 @@ es:
       short: "%-d de %b %H:%M"
     pm: pm
 
+  authentication:
+    users:
+      create:
+        created: 'Usuario creada correctamente'
+      destroy:
+        destroyed: 'Usuario eliminada correctamente'
+      edit:
+        title: 'Editar Usuario'
+      index:
+        back: 'Volver al listado de Usuarios'
+        title: 'Habitación:'
+      msgs:
+        confirm: '¿Estas seguro de eliminar la Usuario?'
+      new:
+        title: 'Añadir Usuario'
+      update:
+        updated: 'Usuario editada correctamente'
+
   reservations:
     create:
       created: 'Reserva creada correctamente'
@@ -259,6 +277,7 @@ es:
       title: 'Añadir habitación'
     update:
       updated: 'Habitación editada correctamente'
+
 
   shared:
     header:

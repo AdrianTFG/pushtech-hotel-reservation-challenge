@@ -7,7 +7,7 @@ class Authentication::UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create room" do
+  test "should create user" do
     assert_difference("User.count") do
       post users_url, params: { user: { email: 'test@test.com', username: 'test', password: 'test12' } }
     end

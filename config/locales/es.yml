@@ -224,6 +224,23 @@ es:
     pm: pm
 
   authentication:
+    sessions:
+      create:
+        created: 'Bienvenido!'
+        failed: 'Login inválido'
+      destroy:
+        destroyed: 'Hasta pronto!'
+      edit:
+        title: 'Editar Usuario'
+      index:
+        back: 'Volver al listado de Usuarios'
+        title: 'Habitación:'
+      msgs:
+        confirm: '¿Estas seguro de eliminar la Usuario?'
+      new:
+        title: 'Añadir Usuario'
+      update:
+        updated: 'Usuario editada correctamente'
     users:
       create:
         created: 'Usuario creada correctamente'

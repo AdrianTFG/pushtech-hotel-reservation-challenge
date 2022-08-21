@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class ReservationsControllerTest < ActionDispatch::IntegrationTest
+
+  setup do
+    login
+  end
+
   test 'render a list of reservations' do
     get reservations_path
 

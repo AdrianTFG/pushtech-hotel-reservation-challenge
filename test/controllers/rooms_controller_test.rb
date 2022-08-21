@@ -1,7 +1,9 @@
 require "test_helper"
 
 class RoomsControllerTest < ActionDispatch::IntegrationTest
+
   setup do
+    login
     @room = rooms(:room_3)
   end
 

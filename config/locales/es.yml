@@ -258,6 +258,9 @@ es:
       update:
         updated: 'Usuario editada correctamente'
 
+  common:
+    not_logged_in: 'Tienes que hacer login o registrarte'
+
   reservations:
     create:
       created: 'Reserva creada correctamente'

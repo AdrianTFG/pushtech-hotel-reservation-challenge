@@ -65,6 +65,9 @@ en:
       update:
         updated: 'User updated correctly'
 
+  common:
+    not_logged_in: 'You have to login or create an account'
+
   reservations:
     create:
       created: 'Reservation created correctly'

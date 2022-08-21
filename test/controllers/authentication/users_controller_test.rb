@@ -2,6 +2,10 @@ require "test_helper"
 
 class Authentication::UsersControllerTest < ActionDispatch::IntegrationTest
 
+  setup do
+    login
+  end
+
   test "should get new" do
     get new_user_url
     assert_response :success

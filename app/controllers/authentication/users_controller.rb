@@ -5,6 +5,9 @@ class Authentication::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+
+    @user.token = get_unique_token
+
     if @user.save
       session[:user_id] = @user.id
       redirect_to reservations_path, notice: t('.created')
@@ -18,4 +21,16 @@ class Authentication::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :username, :password)
   end
+
+  def get_unique_token
+    token_seted = false
+    while !token_seted
+      random_token = SecureRandom.hex(10)
+      if User.find_by_token(random_token).nil?
+        execute "UPDATE users SET token='#{random_token}' WHERE id=#{user.id}"
+        token_seted = true
+      end
+    end
+  end
+
 end

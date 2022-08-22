@@ -66,8 +66,11 @@ en:
         updated: 'User updated correctly'
 
   common:
+    invalid_token: 'Invalid Token'
     not_authorized: 'You do not have permissions for this action'
     not_logged_in: 'You have to login or create an account'
+    permission_denied: 'Permission denied'
+
 
   reservations:
     create:

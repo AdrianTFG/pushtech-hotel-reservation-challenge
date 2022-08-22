@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace 'api' do
+    namespace 'v1' do
+      resources :reservations
+      resources :rooms
+    end
+  end
 
   namespace :authentication, path: '', as: '' do
     resources :users, only: [:new, :create], path: '/register', path_names: {new: '/'}

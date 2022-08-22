@@ -66,8 +66,10 @@ es:
         updated: 'Usuario editada correctamente'
 
   common:
+    invalid_token: 'Token no válido'
     not_authorized: 'No tienes permisos para esta acción'
     not_logged_in: 'Tienes que hacer login o registrarte'
+    permission_denied: 'Permiso denegado'
 
   reservations:
     create:

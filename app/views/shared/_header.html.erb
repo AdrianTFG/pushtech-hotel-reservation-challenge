@@ -26,6 +26,9 @@
           <%= link_to t('.register'), new_user_path, class: 'nav-link' if Current.user&.admin?  %>
         </li>
         <li class="nav-item">
+          <%= link_to t('.token'), users_path, class: 'nav-link' if Current.user  %>
+        </li>
+        <li class="nav-item">
           <%= link_to t('.logout'), session_path(Current.user.id), class: 'nav-link', data: {
               turbo_method: :delete,
               turbo_confirm: t('authentication.sessions.msgs.confirm')

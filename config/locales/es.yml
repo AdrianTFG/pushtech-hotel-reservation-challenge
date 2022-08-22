@@ -56,7 +56,7 @@ es:
         title: 'Editar Usuario'
       index:
         back: 'Volver al listado de Usuarios'
-        title: 'Habitación:'
+        title: 'Token'
       msgs:
         confirm: '¿Estas seguro de eliminar la Usuario?'
       new:
@@ -134,3 +134,4 @@ es:
       register: Añadir Usuario
       logout: Cerrar sesión
       reservations: Listado de reservas
+      token: Ver mi Token

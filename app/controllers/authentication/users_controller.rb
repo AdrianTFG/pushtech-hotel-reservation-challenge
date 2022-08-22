@@ -1,7 +1,12 @@
 class Authentication::UsersController < ApplicationController
+  def index
+    @token = Current.user.token
+  end
+
   def new
     @user = User.new
   end
+
   def create
     @user = User.new(user_params)
 

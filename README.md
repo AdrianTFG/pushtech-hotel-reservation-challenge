@@ -96,4 +96,137 @@ The functions that must be carried out are:
 * xpath (3.2.0)
 * zeitwerk (2.6.0)
 
+## Deployment
+1. Clone the repo in your local machine:
 
+```
+> git clone https://github.com/AdrianTFG/pushtech-hotel-reservation-challenge.git
+```
+
+2. Install the gems
+
+```
+> bundle install
+```
+
+***NOTE: In this part you need to make sure that you have bundler installed in your rails***
+
+3. Launch migrations
+
+```
+> rails db:create
+> rails db:create RAILS_ENV=test
+> rails db:migrate
+> rails db:migrate RAILS_ENV=test
+```
+
+4. Set test data to play
+
+```
+> rails db:fixtures:load
+```
+
+## Launch the app
+
+Simply launch the puma server by doing:
+
+```
+> rails s
+```
+
+Inside the login form, you can enter with whatever of our 3 users:
+* Adrian/123456
+* Ben/123456
+* Carlos/123456
+
+***Adrian is the only user with admin privileges.***
+
+## Launch tests
+
+We just use the test integrates in rails, type in the terminal inside de project folder:
+
+```
+> rails test
+```
+
+## API Rest
+
+I use postman to test this part, you can use whatever you want. The only think to keep in mind is the routes and the body to send if is necessary:
+
+First of all you need to check your token. Go to the web application (or the database) and check the section "My Token" ("Ver mi Token" if you have seated spanish as your browser language).
+
+# Reservations
+- Listing all the reservation: [GET]***http://localhost:3000/api/v1/reservations***
+    * Set the body:
+  ```json
+  {
+      "token": YOUR_TOKEN
+  }
+  ```
+- Create a reservation: [POST]***http://localhost:3000/api/v1/reservations***
+    * Set the body:
+  ```json
+  {
+      "token": YOUR_TOKEN,
+      "room_id": "603788148",
+      "entry_date": "2022-08-18 00:00:00.000000",
+      "departure_date": "2022-08-26 00:00:00.000000",
+      "customer_name": "Test Api Changed",
+      "customer_email": "test@api.com"
+  }
+  ```
+- Update a reservation: [PUT]***http://localhost:3000/api/v1/reservations/RESERVATION_ID***
+    * Set the body:
+  ```json
+  {
+      "token": YOUR_TOKEN,
+      "customer_name": "Updated Test Api Changed",
+      "customer_email": "Updated test@api.com"
+  }
+  ```
+- Update a reservation: [DELETE]***http://localhost:3000/api/v1/reservations/RESERVATION_ID***
+    * Set the body:
+  ```json
+  {
+      "token": YOUR_TOKEN
+  }
+  ```
+
+# Rooms
+**NOTE: If you dont use the token of an admin user, you can't do nothing in this part.**
+- Listing all the rooms: [GET]***http://localhost:3000/api/v1/rooms***
+    * Set the body:
+  ```json
+  {
+      "token": YOUR_TOKEN
+  }
+  ```
+ 
+- Create a room: [POST]***http://localhost:3000/api/v1/reservations***
+    * Set the body:
+  ```json
+  {
+      "token": YOUR_TOKEN,
+      "room_name": "Room Test",
+      "description": "Rom Description Test",
+      "price": 150,
+      "currency": "EUR"
+  }
+  ```
+- Update room: [PUT]***http://localhost:3000/api/v1/reservations/RESERVATION_ID***
+    * Set the body:
+  ```json
+  {
+      "token": YOUR_TOKEN,
+      "room_name": "Updated Room Test",
+      "description": "Updated Rom Description Test"
+  }
+  ```
+- Update a reservation: [DELETE]***http://localhost:3000/api/v1/reservations/RESERVATION_ID***
+    * Set the body:
+  ```json
+  {
+      "token": YOUR_TOKEN
+  }
+  ```  
+  

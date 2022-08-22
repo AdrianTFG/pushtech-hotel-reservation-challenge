@@ -5,7 +5,6 @@ class Authentication::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-
     @user.token = get_unique_token
 
     if @user.save
@@ -27,10 +26,10 @@ class Authentication::UsersController < ApplicationController
     while !token_seted
       random_token = SecureRandom.hex(10)
       if User.find_by_token(random_token).nil?
-        execute "UPDATE users SET token='#{random_token}' WHERE id=#{user.id}"
         token_seted = true
       end
     end
+    random_token
   end
 
 end

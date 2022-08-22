@@ -33,19 +33,22 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    room.destroy
+    begin
+      room.destroy
 
-    respond_to do |format|
-      format.html { redirect_to rooms_url, notice: t('.destroyed') }
+      redirect_to rooms_url, notice: t('.destroyed')
+    rescue => e
+      redirect_to rooms_url, alert: t('.not_deleted')
     end
   end
 
   private
-    def room
-      @room = Room.find(params[:id])
-    end
 
-    def room_params
-      params.require(:room).permit(:room_name, :description, :price, :currency)
-    end
+  def room
+    @room = Room.find(params[:id])
+  end
+
+  def room_params
+    params.require(:room).permit(:room_name, :description, :price, :currency)
+  end
 end

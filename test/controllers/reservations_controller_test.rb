@@ -17,13 +17,12 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     get reservation_path(reservations(:reservation_one))
 
     assert_response :success
-    assert_select '.customer_name', 'Adrian'
-    assert_select '.customer_email', 'adrian@adrian.com'
+    assert_select '.customer_name', 'Customer name: Adrian'
+    assert_select '.customer_email', 'Customer email: adrian@adrian.com'
     assert_select '.room_name', 'Room 1'
-    assert_select '.price', '150.0'
-    assert_select '.currency', 'EUR'
-    assert_select '.entry_date', '2022-08-18'
-    assert_select '.departure_date', '2022-08-18'
+    assert_select '.price', 'Price: 150.0€'
+    assert_select '.entry_date', 'Entry date: 2022-08-18'
+    assert_select '.departure_date', 'Departure date: 2022-08-19'
   end
 
   test 'render a new reservation form' do
@@ -38,7 +37,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
         reservation: {
             room_id: rooms(:room_1).id,
             entry_date: '2022-08-18',
-            departure_date: '2022-08-18',
+            departure_date: '2022-08-19',
             customer_name: 'Test Customer Name',
             customer_email: 'Test@Customer.email'
         }
@@ -71,7 +70,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   test 'allow to update a reservation' do
     patch reservation_path(reservations(:reservation_one)), params: {
         reservation: {
-            customer_name: 'Adrian'
+            customer_name: 'Adrian Updated'
         }
     }
 
@@ -82,7 +81,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   test 'does not allow to update a reservation' do
     patch reservation_path(reservations(:reservation_one)), params: {
         reservation: {
-            customer_name: nil
+            customer_email: nil
         }
     }
 

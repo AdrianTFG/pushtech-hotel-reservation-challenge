@@ -4,6 +4,6 @@
   <td><%= reservation.departure_date.to_date %></td>
   <td><%= reservation.customer_name %></td>
   <td><%= Room.format_number(reservation.room.price.to_f * (reservation.departure_date.to_date.mjd - reservation.entry_date.to_date.mjd), reservation.room.currency) %></td>
-  <td><%= link_to t('.show'), reservation_path(reservation.id), class: 'reservation' %></td>
+  <td><%= link_to t('.show'), reservation_path(reservation.id), class: 'btn btn-info reservation' %></td>
 </tr>
 

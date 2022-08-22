@@ -1,15 +1,14 @@
 <h2><%= t('.title') %></h2>
 
-<p class="room_name"><%= @reservation.room.room_name %></p>
-<p class="price"><%= @reservation.room.price %></p>
-<p class="currency"><%= @reservation.room.currency %></p>
-<p class="entry_date"><%= @reservation.entry_date.to_date %></p>
-<p class="departure_date"><%= @reservation.departure_date.to_date %></p>
-<p class="customer_name"><%= @reservation.customer_name %></p>
-<p class="customer_email"><%= @reservation.customer_email %></p>
+<h3 class="room_name"><%= @reservation.room.room_name %></h3>
+<p class="price"><%= "#{t('.price')}: " %><b><%= @reservation.room.price.to_s + Room::CURRENCIES[@reservation.room.currency][:symbol] %></b></p>
+<p class="entry_date"><%= "#{t('.entry_date')}: " %><%= @reservation.entry_date.to_date %></p>
+<p class="departure_date"><%= "#{t('.departure_date')}: " %><%= @reservation.departure_date.to_date %></p>
+<p class="customer_name"><%= "#{t('.customer_name')}: " %><%= @reservation.customer_name %></p>
+<p class="customer_email"><%= "#{t('.customer_email')}: " %><%= @reservation.customer_email %></p>
 
-<%= link_to t('.edit'), edit_reservation_path(@reservation) if @reservation.owner? || @reservation.admin? %>
-<%= link_to t('.delete'), reservation_path(@reservation), data:{
+<%= link_to t('.edit'), edit_reservation_path(@reservation), class: 'btn btn-info' if @reservation.owner? || @reservation.admin? %>
+<%= link_to t('.delete'), reservation_path(@reservation), class: 'btn btn-danger', data:{
     turbo_method: :delete,
     turbo_confirm: t('reservations.msgs.confirm')
 }  if @reservation.owner? || @reservation.admin? %>

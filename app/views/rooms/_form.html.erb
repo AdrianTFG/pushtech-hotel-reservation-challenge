@@ -8,7 +8,7 @@
 
   <div class="mb-3">
     <%= form.label :room_name, class: 'form-label' %>
-    <%= form.text_field :room_nam, class: 'form-control' %>
+    <%= form.text_field :room_name, class: 'form-control' %>
   </div>
 
   <div class="mb-3">
@@ -23,10 +23,18 @@
 
   <div class="mb-3">
     <%= form.label :currency, class: 'form-label' %>
-    <%= form.text_field :currency, class: 'form-control' %>
+    <select name="room[currency]" class="form-select">
+      <% Room::CURRENCIES.keys.each do |currency| %>
+          <% if @room.currency == currency %>
+              <option value="<%= currency %>" selected><%= t(".#{currency}") %></option>
+          <% else %>
+              <option value="<%= currency %>"><%= t(".#{currency}") %></option>
+          <% end %>
+      <% end %>
+    </select>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit @room.persisted? ? t('.update_room') : t('.create_room'), class: 'btn btn-primary' %>
   </div>
 <% end %>

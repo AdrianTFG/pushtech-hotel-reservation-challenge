@@ -3,8 +3,8 @@
   <td><%= room.description %></td>
   <td><%= Room.format_number(room.price, room.currency) %></td>
   <td><%= room.currency %></td>
-  <td><%= link_to t('.edit'), edit_room_path(room) %></td>
-  <td><%= link_to t('.delete'), reservation_path(room), data:{
+  <td><%= link_to t('.edit'), edit_room_path(room), class: 'btn btn-info' %></td>
+  <td><%= link_to t('.delete'), room_path(room), class: 'btn btn-danger', data:{
       turbo_method: :delete,
       turbo_confirm: t('rooms.msgs.confirm')
   } %></td>

@@ -2,7 +2,7 @@
 
 reservation_one:
   entry_date: 2022-08-18
-  departure_date: 2022-08-18
+  departure_date: 2022-08-19
   customer_name: Adrian
   customer_email: adrian@adrian.com
   room: room_1
@@ -10,7 +10,7 @@ reservation_one:
 
 reservation_two:
   entry_date: 2022-08-18
-  departure_date: 2022-08-18
+  departure_date: 2022-08-19
   customer_name: Ben
   customer_email: benjamin@benjamin.com
   room: room_2

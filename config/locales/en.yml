@@ -79,15 +79,25 @@ en:
       destroyed: 'Reservation deleted correctly'
     edit:
       title: 'Edit reservation'
+    form:
+      create_reservation: 'Create Reservation'
+      update_reservation: 'Update Reservation'
     index:
       title: 'Reservations:'
     msgs:
       confirm: 'Are you sure you want to delete the reservation?'
     new:
       title: 'Add reservation'
+    reservation:
+      show: 'Show'
     search_form:
       search: 'Search'
     show:
+      entry_date: 'Entry date'
+      departure_date: 'Departure date'
+      customer_name: 'Customer name'
+      customer_email: 'Customer email'
+      price: 'Price'
       title: 'Reservation details'
     update:
       updated: 'Reservation updated correctly'
@@ -97,10 +107,18 @@ en:
       created: 'Room created correctly'
     destroy:
       destroyed: 'Room deleted correctly'
+      not_deleted: 'This room is assigned to reservations and cannot be deleted.'
     edit:
       title: 'Edit room'
+    form:
+      create_room: 'Add Room'
+      EUR: 'Euro'
+      GBP: 'Great Britain pound'
+      USD: 'United States dollar'
+      update_room: 'Update Room'
     index:
       back: 'Back to rooms'
+      new: 'New Room'
       title: 'Rooms:'
     msgs:
       confirm: 'Are you sure you want to delete this room?'

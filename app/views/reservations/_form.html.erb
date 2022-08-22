@@ -12,12 +12,14 @@
 
     <div class="mb-3">
       <%= form.label :entry_date, class: 'form-label' %>
-      <%= form.date_select :entry_date, class: 'form-select' %>
+      <br>
+      <%= form.date_select :entry_date %>
     </div>
 
     <div class="mb-3">
       <%= form.label :departure_date, class: 'form-label' %>
-      <%= form.date_select :departure_date, class: 'form-control' %>
+      <br>
+      <%= form.date_select :departure_date %>
     </div>
 
     <div class="mb-3">
@@ -29,5 +31,6 @@
       <%= form.label :customer_email, class: 'form-label' %>
       <%= form.email_field :customer_email, class: 'form-control' %>
     </div>
-    <%= form.submit %>
+
+    <%= form.submit @reservation.persisted? ? t('.update_reservation') : t('.create_reservation'), class: 'btn btn-primary' %>
 <% end %>

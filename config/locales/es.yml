@@ -78,15 +78,25 @@ es:
       destroyed: 'Reserva eliminada correctamente'
     edit:
       title: 'Editar reserva'
+    form:
+      create_reservation: 'Crear Reserva'
+      update_reservation: 'Actualizar Reserva'
     index:
       title: 'Reservas:'
     msgs:
       confirm: '¿Estas seguro de eliminar la reserva?'
     new:
       title: 'Añadir reserva'
+    reservation:
+      show: 'Ver'
     search_form:
       search: 'Buscar'
     show:
+      entry_date: 'Fecha de Entrada'
+      departure_date: 'Fecha de Salida'
+      customer_name: 'Nombre del cliente'
+      customer_email: 'Email del cliente'
+      price: 'Precio'
       title: 'Detalles de la reserva'
     update:
       updated: 'Reserva editada correctamente'
@@ -96,10 +106,18 @@ es:
       created: 'Habitación creada correctamente'
     destroy:
       destroyed: 'Habitación eliminada correctamente'
+      not_deleted: 'Esta habitación está asignada a reservas y no puede ser eliminada.'
     edit:
       title: 'Editar habitación'
+    form:
+      create_room: 'Añadir Habitación'
+      EUR: 'Euro'
+      GBP: 'Libra Esterlina'
+      USD: 'Dolar Estadounidense'
+      update_room: 'Modificar Habitación'
     index:
       back: 'Volver al listado de habitaciones'
+      new: 'Nueva Habitación'
       title: 'Habitación:'
     msgs:
       confirm: '¿Estas seguro de eliminar la habitación?'

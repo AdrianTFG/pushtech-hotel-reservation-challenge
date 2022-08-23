@@ -124,6 +124,7 @@ The functions that must be carried out are:
 
 ```
 > rails db:fixtures:load
+> rails db:fixtures:load RAILS_ENV=test
 ```
 
 ## Launch the app
@@ -135,9 +136,12 @@ Simply launch the puma server by doing:
 ```
 
 Inside the login form, you can enter with whatever of our 3 users:
-* Adrian/123456
-* Ben/123456
-* Carlos/123456
+
+| Name | Password | Admin |
+|:---:|---|---:|
+| Adrian | 123456 | [x] |
+| Ben | 123456 | [ ] |
+| Carlos | 123456 | [ ] |
 
 ***Adrian is the only user with admin privileges.***
 

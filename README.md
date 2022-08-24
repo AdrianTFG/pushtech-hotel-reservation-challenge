@@ -139,11 +139,12 @@ Inside the login form, you can enter with whatever of our 3 users:
 
 | Name | Password | Admin |
 |:---:|---|---:|
-| Adrian | 123456 | [x] |
-| Ben | 123456 | [ ] |
-| Carlos | 123456 | [ ] |
+| Adrian | 123456 | YES |
+| Ben | 123456 | NO |
+| Carlos | 123456 | NO |
 
 ***Adrian is the only user with admin privileges.***
+
 
 ## Launch tests
 

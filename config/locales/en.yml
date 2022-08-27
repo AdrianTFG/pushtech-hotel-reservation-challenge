@@ -97,6 +97,7 @@ en:
       departure_date: 'Departure date'
       customer_name: 'Customer name'
       customer_email: 'Customer email'
+      made_by: 'Reservation made by:'
       price: 'Price'
       title: 'Reservation details'
     update:

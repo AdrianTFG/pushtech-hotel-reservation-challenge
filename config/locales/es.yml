@@ -96,6 +96,7 @@ es:
       departure_date: 'Fecha de Salida'
       customer_name: 'Nombre del cliente'
       customer_email: 'Email del cliente'
+      made_by: 'Reserva hecha por:'
       price: 'Precio'
       title: 'Detalles de la reserva'
     update:

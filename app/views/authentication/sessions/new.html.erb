@@ -2,20 +2,37 @@
 
 <div class="row">
   <div class="col-lg-4">
-    <%= form_with(url: sessions_path) do |form| %>
-        <div>
-          <%= form.label :login, class: 'form-label' %>
-          <%= form.text_field :login, class: 'form-control', required: true %>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card my-5">
+
+      <%= form_with(url: sessions_path) do |form| %>
+
+        <div class="text-center">
+          <img src="/img/logo.png" class="img-fluid profile-image-pic my-3"
+               width="200px" alt="profile">
         </div>
 
-        <div>
-          <%= form.label :password, class: 'form-label' %>
-          <%= form.password_field :password, class: 'form-control', required: true %>
-        </div>
+          <div class="m-3 text-center">
+            <%= form.label :login, class: 'form-label' %>
+            <%= form.text_field :login, class: 'form-control text-center', required: true %>
+          </div>
 
-        <div>
-          <%= form.submit t('.submit_button'), class: 'btn btn-primary mt-3' %>
-        </div>
-    <% end %>
+          <div class="m-3 text-center">
+            <%= form.label :password, class: 'form-label' %>
+            <%= form.password_field :password, class: 'form-control text-center', required: true %>
+          </div>
+
+          <div class="text-center m-3 mt-5">
+            <%= form.submit t('.submit_button'), class: 'btn btn-primary px-5 mb-5 w-100' %>
+          </div>
+
+      <% end %>
+    </div>
+
   </div>
 </div>

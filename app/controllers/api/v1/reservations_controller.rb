@@ -2,8 +2,6 @@ module Api
   module V1
     class ReservationsController < ApplicationController
 
-      before_action :check_token
-
       def index
         reservations = Reservation.order('entry_date DESC')
         render json: {status: 'SUCCESS', message: 'All reservation loaded', data: reservations}, status: :ok

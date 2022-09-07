@@ -20,20 +20,11 @@ module Authentication
 
     def set_current_user
       Current.user = User.find_by(id: session[:user_id]) if session[:user_id]
+      Current.user = User.find_by_token(params[:token]) if params[:token]
     end
 
     def protect_pages
       redirect_to new_session_path, alert: t('common.not_logged_in') unless Current.user
-    end
-
-    def check_token
-      if User.find_by_token(params[:token]).nil?
-        raise NotAuthorizedToken
-      else
-        @user = User.find_by_token(params[:token])
-        session[:user_id] = @user.id
-        set_current_user
-      end
     end
 
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_21_234446) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_22_141030) do
   create_table "reservations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "entry_date", null: false
     t.datetime "departure_date", null: false

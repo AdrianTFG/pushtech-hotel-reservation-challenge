@@ -2,8 +2,6 @@ module Api
   module V1
     class RoomsController < ApplicationController
 
-      before_action :check_token
-
       before_action :authorize_api!
 
       def index
